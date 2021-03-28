@@ -53,12 +53,13 @@ Partial Class Account_List
                 Dim dt As DataTable = Persons
                 If dt Is Nothing Then
                     dt = New DataTable()
-                    dt.Columns.AddRange(New DataColumn(5) {
+                    dt.Columns.AddRange(New DataColumn(6) {
                                         New DataColumn("Id"),
                                         New DataColumn("UserName"),
                                         New DataColumn("FirstName"),
                                         New DataColumn("LastName"),
                                         New DataColumn("Email"),
+                                        New DataColumn("Link"),
                                         New DataColumn("PhoneNumber")
                                         })
                     cmd.CommandType = CommandType.Text
@@ -72,7 +73,8 @@ Partial Class Account_List
                                         row.ItemArray(1),
                                         row.ItemArray(2),
                                         row.ItemArray(3),
-                                        row.ItemArray(4)
+                                        row.ItemArray(4),
+                                        "/Account/Update/" + row.ItemArray(0).ToString()
                                     )
                             Next
                             System.Diagnostics.Debug.WriteLine("hi")

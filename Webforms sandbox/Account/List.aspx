@@ -35,7 +35,7 @@
                 <asp:Label ID="Label6" runat="server" Text='<%# Eval("PhoneNumber") %>'></asp:Label>
             </td>
             <td>
-                <asp:Button ID="btnEdit" runat="server" Text='Edit' CommandName="Edit" />
+                <asp:LinkButton href = '<%# Eval("Link") %>' ID="Button1" runat="server" Text='Update' />
             </td>
         </ItemTemplate>
         <EditItemTemplate>
@@ -54,12 +54,8 @@
             <td>
                 <asp:Label ID="Label9" runat="server" Text='<%# Eval("Email") %>' Visible="false"></asp:Label>
             </td>
-                    <td>
+             <td>
                 <asp:Label ID="Label10" runat="server" Text='<%# Eval("PhoneNumber") %>' Visible="false"></asp:Label>
-            </td>
-            <td>
-                <asp:Button ID="Button1" runat="server" Text='Update' CommandName="Update" />
-                <asp:Button ID="Button2" runat="server" Text='Cancel' CommandName="Cancel" />
             </td>
         </EditItemTemplate>
     </asp:ListView>
