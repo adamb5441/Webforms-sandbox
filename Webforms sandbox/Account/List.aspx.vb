@@ -47,7 +47,7 @@ Partial Class Account_List
     End Sub
 
     Private Sub BindListView()
-        Dim constring As String = "Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=aspnet-Webforms_sandbox-42248daf-5cf0-48f3-a045-60197dd8fe8f;AttachDbFilename=|DataDirectory|\aspnet-Webforms_sandbox-42248daf-5cf0-48f3-a045-60197dd8fe8f.mdf;Integrated Security=SSPI"
+        Dim constring As String = ConfigurationManager.ConnectionStrings("DefaultConnection").ConnectionString
         Using con As New SqlConnection(constring)
             Using cmd As New SqlCommand("SELECT [Id], [UserName], [FirstName], [LastName] [Email], [PhoneNumber] FROM [aspnet-Webforms_sandbox-42248daf-5cf0-48f3-a045-60197dd8fe8f].[dbo].[AspNetUsers]", con)
                 Dim dt As DataTable = Persons
